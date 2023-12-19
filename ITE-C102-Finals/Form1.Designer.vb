@@ -312,7 +312,7 @@ Partial Class Form1
         ' 
         ' lblQuestion1
         ' 
-        lblQuestion1.Font = New Font("Daydream", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblQuestion1.Font = New Font("Daydream", 24F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         lblQuestion1.ForeColor = Color.FromArgb(CByte(255), CByte(195), CByte(0))
         lblQuestion1.Location = New Point(32, 18)
         lblQuestion1.Name = "lblQuestion1"
@@ -466,7 +466,7 @@ Partial Class Form1
         ' 
         ' lblQuestion2
         ' 
-        lblQuestion2.Font = New Font("Daydream", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblQuestion2.Font = New Font("Daydream", 24F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         lblQuestion2.ForeColor = Color.FromArgb(CByte(255), CByte(195), CByte(0))
         lblQuestion2.Location = New Point(32, 18)
         lblQuestion2.Name = "lblQuestion2"
@@ -620,7 +620,7 @@ Partial Class Form1
         ' 
         ' lblQuestion3
         ' 
-        lblQuestion3.Font = New Font("Daydream", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblQuestion3.Font = New Font("Daydream", 24F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         lblQuestion3.ForeColor = Color.FromArgb(CByte(255), CByte(195), CByte(0))
         lblQuestion3.Location = New Point(32, 18)
         lblQuestion3.Name = "lblQuestion3"
@@ -774,7 +774,7 @@ Partial Class Form1
         ' 
         ' lblQuestion4
         ' 
-        lblQuestion4.Font = New Font("Daydream", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblQuestion4.Font = New Font("Daydream", 24F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         lblQuestion4.ForeColor = Color.FromArgb(CByte(255), CByte(195), CByte(0))
         lblQuestion4.Location = New Point(32, 18)
         lblQuestion4.Name = "lblQuestion4"

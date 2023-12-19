@@ -8,7 +8,7 @@
         enemyHP3 = 5
         enemyHP4 = 5
 
-        UpdateUI()
+        UpdateUIHP()
         UpdateUI1()
         UpdateUI2()
         UpdateUI3()
@@ -20,7 +20,7 @@
         Else
             playerHP -= 1
         End If
-        UpdateUI()
+        UpdateUIHP()
         UpdateUI1()
     End Sub
 
@@ -30,7 +30,7 @@
         Else
             playerHP -= 1
         End If
-        UpdateUI()
+        UpdateUIHP()
         UpdateUI1()
     End Sub
 
@@ -40,7 +40,7 @@
         Else
             playerHP -= 1
         End If
-        UpdateUI()
+        UpdateUIHP()
         UpdateUI1()
     End Sub
 
@@ -50,7 +50,7 @@
         Else
             playerHP -= 1
         End If
-        UpdateUI()
+        UpdateUIHP()
         UpdateUI1()
     End Sub
 
@@ -60,7 +60,7 @@
         Else
             playerHP -= 1
         End If
-        UpdateUI()
+        UpdateUIHP()
         UpdateUI2()
     End Sub
 
@@ -70,7 +70,7 @@
         Else
             playerHP -= 1
         End If
-        UpdateUI()
+        UpdateUIHP()
         UpdateUI2()
     End Sub
 
@@ -80,7 +80,7 @@
         Else
             playerHP -= 1
         End If
-        UpdateUI()
+        UpdateUIHP()
         UpdateUI2()
     End Sub
 
@@ -90,7 +90,7 @@
         Else
             playerHP -= 1
         End If
-        UpdateUI()
+        UpdateUIHP()
         UpdateUI2()
     End Sub
 
@@ -100,7 +100,7 @@
         Else
             playerHP -= 1
         End If
-        UpdateUI()
+        UpdateUIHP()
         UpdateUI3()
     End Sub
 
@@ -110,7 +110,7 @@
         Else
             playerHP -= 1
         End If
-        UpdateUI()
+        UpdateUIHP()
         UpdateUI3()
     End Sub
 
@@ -120,7 +120,7 @@
         Else
             playerHP -= 1
         End If
-        UpdateUI()
+        UpdateUIHP()
         UpdateUI3()
     End Sub
 
@@ -130,7 +130,7 @@
         Else
             playerHP -= 1
         End If
-        UpdateUI()
+        UpdateUIHP()
         UpdateUI3()
     End Sub
 
@@ -149,7 +149,7 @@
     Private Sub lblAnswer4_4_Click(sender As Object, e As EventArgs) Handles lblAnswer4_4.Click
 
     End Sub
-    Private Sub UpdateUI()
+    Private Sub UpdateUIHP()
         lblHP1.Text = playerHP.ToString()
         lblHP2.Text = playerHP.ToString()
         lblHP3.Text = playerHP.ToString()
