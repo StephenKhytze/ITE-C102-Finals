@@ -22,11 +22,12 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         TabControl1 = New TabControl()
         MenuTab = New TabPage()
+        PictureBox2 = New PictureBox()
         PictureBox1 = New PictureBox()
-        Label1 = New Label()
         TabPage2 = New TabPage()
         SplitContainer1 = New SplitContainer()
         lblAnswer4_1 = New Label()
@@ -34,11 +35,14 @@ Partial Class Form1
         lblAnswer2_1 = New Label()
         lblAnswer1_1 = New Label()
         Panel1 = New Panel()
+        Label1 = New Label()
         lblTimer1 = New Label()
         lblHP1 = New Label()
         Label2 = New Label()
         imgChar1 = New PictureBox()
         lblQuestion1 = New Label()
+        imgEnemy1 = New PictureBox()
+        imgCharSprite1 = New PictureBox()
         TabPage3 = New TabPage()
         SplitContainer2 = New SplitContainer()
         lblAnswer4_2 = New Label()
@@ -46,11 +50,12 @@ Partial Class Form1
         lblAnswer2_2 = New Label()
         lblAnswer1_2 = New Label()
         Panel2 = New Panel()
-        lblTimer2 = New Label()
         lblHP2 = New Label()
         Label12 = New Label()
         imgChar2 = New PictureBox()
         lblQuestion2 = New Label()
+        imgEnemy2 = New PictureBox()
+        imgCharSprite2 = New PictureBox()
         TabPage4 = New TabPage()
         SplitContainer3 = New SplitContainer()
         lblAnswer4_3 = New Label()
@@ -58,11 +63,12 @@ Partial Class Form1
         lblAnswer2_3 = New Label()
         lblAnswer1_3 = New Label()
         Panel3 = New Panel()
-        lblTimer3 = New Label()
         lblHP3 = New Label()
         Label20 = New Label()
         imgChar3 = New PictureBox()
         lblQuestion3 = New Label()
+        imgEnemy3 = New PictureBox()
+        imgCharSprite3 = New PictureBox()
         TabPage5 = New TabPage()
         SplitContainer4 = New SplitContainer()
         lblAnswer4_4 = New Label()
@@ -70,44 +76,66 @@ Partial Class Form1
         lblAnswer2_4 = New Label()
         lblAnswer1_4 = New Label()
         Panel4 = New Panel()
-        lblTimer4 = New Label()
         lblHP4 = New Label()
         Label28 = New Label()
         imgChar4 = New PictureBox()
         lblQuestion4 = New Label()
+        PictureBox3 = New PictureBox()
+        imgCharSprite4 = New PictureBox()
         TabPage6 = New TabPage()
         TabPage7 = New TabPage()
         TabPage8 = New TabPage()
         TabPage9 = New TabPage()
         TabPage10 = New TabPage()
         TabPage11 = New TabPage()
+        tmrBattle = New Timer(components)
+        tmrAnimation = New Timer(components)
+        Label3 = New Label()
+        lblTimer2 = New Label()
+        Label4 = New Label()
+        lblTimer3 = New Label()
+        Label5 = New Label()
+        lblTimer4 = New Label()
         TabControl1.SuspendLayout()
         MenuTab.SuspendLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         TabPage2.SuspendLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
+        SplitContainer1.Panel2.SuspendLayout()
         SplitContainer1.SuspendLayout()
         Panel1.SuspendLayout()
         CType(imgChar1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(imgEnemy1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(imgCharSprite1, ComponentModel.ISupportInitialize).BeginInit()
         TabPage3.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer2.Panel1.SuspendLayout()
+        SplitContainer2.Panel2.SuspendLayout()
         SplitContainer2.SuspendLayout()
         Panel2.SuspendLayout()
         CType(imgChar2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(imgEnemy2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(imgCharSprite2, ComponentModel.ISupportInitialize).BeginInit()
         TabPage4.SuspendLayout()
         CType(SplitContainer3, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer3.Panel1.SuspendLayout()
+        SplitContainer3.Panel2.SuspendLayout()
         SplitContainer3.SuspendLayout()
         Panel3.SuspendLayout()
         CType(imgChar3, ComponentModel.ISupportInitialize).BeginInit()
+        CType(imgEnemy3, ComponentModel.ISupportInitialize).BeginInit()
+        CType(imgCharSprite3, ComponentModel.ISupportInitialize).BeginInit()
         TabPage5.SuspendLayout()
         CType(SplitContainer4, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer4.Panel1.SuspendLayout()
+        SplitContainer4.Panel2.SuspendLayout()
         SplitContainer4.SuspendLayout()
         Panel4.SuspendLayout()
         CType(imgChar4, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        CType(imgCharSprite4, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' TabControl1
@@ -134,8 +162,8 @@ Partial Class Form1
         ' 
         MenuTab.BackgroundImage = CType(resources.GetObject("MenuTab.BackgroundImage"), Image)
         MenuTab.BackgroundImageLayout = ImageLayout.Stretch
+        MenuTab.Controls.Add(PictureBox2)
         MenuTab.Controls.Add(PictureBox1)
-        MenuTab.Controls.Add(Label1)
         MenuTab.Location = New Point(4, 24)
         MenuTab.Name = "MenuTab"
         MenuTab.Padding = New Padding(3)
@@ -143,6 +171,16 @@ Partial Class Form1
         MenuTab.TabIndex = 0
         MenuTab.Text = "Menu"
         MenuTab.UseVisualStyleBackColor = True
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(342, 47)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(1219, 373)
+        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox2.TabIndex = 7
+        PictureBox2.TabStop = False
         ' 
         ' PictureBox1
         ' 
@@ -154,17 +192,6 @@ Partial Class Form1
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 6
         PictureBox1.TabStop = False
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("04b", 129.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(398, 42)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(1106, 346)
-        Label1.TabIndex = 1
-        Label1.Text = "Quantum" & vbCrLf & "Quest"
-        Label1.TextAlign = ContentAlignment.TopCenter
         ' 
         ' TabPage2
         ' 
@@ -199,6 +226,8 @@ Partial Class Form1
         ' 
         SplitContainer1.Panel2.BackColor = Color.Transparent
         SplitContainer1.Panel2.BackgroundImageLayout = ImageLayout.Stretch
+        SplitContainer1.Panel2.Controls.Add(imgEnemy1)
+        SplitContainer1.Panel2.Controls.Add(imgCharSprite1)
         SplitContainer1.Size = New Size(1892, 1031)
         SplitContainer1.SplitterDistance = 647
         SplitContainer1.TabIndex = 0
@@ -258,6 +287,7 @@ Partial Class Form1
         ' Panel1
         ' 
         Panel1.BorderStyle = BorderStyle.Fixed3D
+        Panel1.Controls.Add(Label1)
         Panel1.Controls.Add(lblTimer1)
         Panel1.Controls.Add(lblHP1)
         Panel1.Controls.Add(Label2)
@@ -267,14 +297,26 @@ Partial Class Form1
         Panel1.Size = New Size(641, 206)
         Panel1.TabIndex = 2
         ' 
+        ' Label1
+        ' 
+        Label1.Font = New Font("Daydream", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = Color.FromArgb(CByte(255), CByte(195), CByte(0))
+        Label1.Location = New Point(428, 0)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(206, 101)
+        Label1.TabIndex = 7
+        Label1.Text = "TIME LEFT:"
+        Label1.TextAlign = ContentAlignment.MiddleCenter
+        ' 
         ' lblTimer1
         ' 
         lblTimer1.Font = New Font("Daydream", 32.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblTimer1.ForeColor = Color.FromArgb(CByte(255), CByte(195), CByte(0))
-        lblTimer1.Location = New Point(432, 12)
+        lblTimer1.Location = New Point(428, 96)
         lblTimer1.Name = "lblTimer1"
-        lblTimer1.Size = New Size(206, 183)
+        lblTimer1.Size = New Size(206, 101)
         lblTimer1.TabIndex = 6
+        lblTimer1.Text = "30"
         lblTimer1.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' lblHP1
@@ -320,6 +362,26 @@ Partial Class Form1
         lblQuestion1.TabIndex = 1
         lblQuestion1.TextAlign = ContentAlignment.MiddleCenter
         ' 
+        ' imgEnemy1
+        ' 
+        imgEnemy1.Image = CType(resources.GetObject("imgEnemy1.Image"), Image)
+        imgEnemy1.Location = New Point(575, 343)
+        imgEnemy1.Name = "imgEnemy1"
+        imgEnemy1.Size = New Size(642, 579)
+        imgEnemy1.SizeMode = PictureBoxSizeMode.StretchImage
+        imgEnemy1.TabIndex = 1
+        imgEnemy1.TabStop = False
+        ' 
+        ' imgCharSprite1
+        ' 
+        imgCharSprite1.Image = CType(resources.GetObject("imgCharSprite1.Image"), Image)
+        imgCharSprite1.Location = New Point(184, 610)
+        imgCharSprite1.Name = "imgCharSprite1"
+        imgCharSprite1.Size = New Size(157, 243)
+        imgCharSprite1.SizeMode = PictureBoxSizeMode.StretchImage
+        imgCharSprite1.TabIndex = 0
+        imgCharSprite1.TabStop = False
+        ' 
         ' TabPage3
         ' 
         TabPage3.BackgroundImage = CType(resources.GetObject("TabPage3.BackgroundImage"), Image)
@@ -353,6 +415,8 @@ Partial Class Form1
         ' 
         SplitContainer2.Panel2.BackColor = Color.Transparent
         SplitContainer2.Panel2.BackgroundImageLayout = ImageLayout.Stretch
+        SplitContainer2.Panel2.Controls.Add(imgEnemy2)
+        SplitContainer2.Panel2.Controls.Add(imgCharSprite2)
         SplitContainer2.Size = New Size(1892, 1031)
         SplitContainer2.SplitterDistance = 647
         SplitContainer2.TabIndex = 1
@@ -412,6 +476,7 @@ Partial Class Form1
         ' Panel2
         ' 
         Panel2.BorderStyle = BorderStyle.Fixed3D
+        Panel2.Controls.Add(Label3)
         Panel2.Controls.Add(lblTimer2)
         Panel2.Controls.Add(lblHP2)
         Panel2.Controls.Add(Label12)
@@ -420,16 +485,6 @@ Partial Class Form1
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(641, 206)
         Panel2.TabIndex = 2
-        ' 
-        ' lblTimer2
-        ' 
-        lblTimer2.Font = New Font("Daydream", 32.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblTimer2.ForeColor = Color.FromArgb(CByte(255), CByte(195), CByte(0))
-        lblTimer2.Location = New Point(432, 12)
-        lblTimer2.Name = "lblTimer2"
-        lblTimer2.Size = New Size(206, 183)
-        lblTimer2.TabIndex = 6
-        lblTimer2.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' lblHP2
         ' 
@@ -474,6 +529,26 @@ Partial Class Form1
         lblQuestion2.TabIndex = 1
         lblQuestion2.TextAlign = ContentAlignment.MiddleCenter
         ' 
+        ' imgEnemy2
+        ' 
+        imgEnemy2.Image = CType(resources.GetObject("imgEnemy2.Image"), Image)
+        imgEnemy2.Location = New Point(377, 395)
+        imgEnemy2.Name = "imgEnemy2"
+        imgEnemy2.Size = New Size(580, 593)
+        imgEnemy2.SizeMode = PictureBoxSizeMode.StretchImage
+        imgEnemy2.TabIndex = 1
+        imgEnemy2.TabStop = False
+        ' 
+        ' imgCharSprite2
+        ' 
+        imgCharSprite2.Image = CType(resources.GetObject("imgCharSprite2.Image"), Image)
+        imgCharSprite2.Location = New Point(172, 582)
+        imgCharSprite2.Name = "imgCharSprite2"
+        imgCharSprite2.Size = New Size(157, 243)
+        imgCharSprite2.SizeMode = PictureBoxSizeMode.Zoom
+        imgCharSprite2.TabIndex = 0
+        imgCharSprite2.TabStop = False
+        ' 
         ' TabPage4
         ' 
         TabPage4.BackgroundImage = CType(resources.GetObject("TabPage4.BackgroundImage"), Image)
@@ -507,6 +582,8 @@ Partial Class Form1
         ' 
         SplitContainer3.Panel2.BackColor = Color.Transparent
         SplitContainer3.Panel2.BackgroundImageLayout = ImageLayout.Stretch
+        SplitContainer3.Panel2.Controls.Add(imgEnemy3)
+        SplitContainer3.Panel2.Controls.Add(imgCharSprite3)
         SplitContainer3.Size = New Size(1892, 1031)
         SplitContainer3.SplitterDistance = 647
         SplitContainer3.TabIndex = 1
@@ -566,6 +643,7 @@ Partial Class Form1
         ' Panel3
         ' 
         Panel3.BorderStyle = BorderStyle.Fixed3D
+        Panel3.Controls.Add(Label4)
         Panel3.Controls.Add(lblTimer3)
         Panel3.Controls.Add(lblHP3)
         Panel3.Controls.Add(Label20)
@@ -574,16 +652,6 @@ Partial Class Form1
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(641, 206)
         Panel3.TabIndex = 2
-        ' 
-        ' lblTimer3
-        ' 
-        lblTimer3.Font = New Font("Daydream", 32.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblTimer3.ForeColor = Color.FromArgb(CByte(255), CByte(195), CByte(0))
-        lblTimer3.Location = New Point(432, 12)
-        lblTimer3.Name = "lblTimer3"
-        lblTimer3.Size = New Size(206, 183)
-        lblTimer3.TabIndex = 6
-        lblTimer3.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' lblHP3
         ' 
@@ -628,6 +696,26 @@ Partial Class Form1
         lblQuestion3.TabIndex = 1
         lblQuestion3.TextAlign = ContentAlignment.MiddleCenter
         ' 
+        ' imgEnemy3
+        ' 
+        imgEnemy3.Image = CType(resources.GetObject("imgEnemy3.Image"), Image)
+        imgEnemy3.Location = New Point(685, 134)
+        imgEnemy3.Name = "imgEnemy3"
+        imgEnemy3.Size = New Size(517, 478)
+        imgEnemy3.SizeMode = PictureBoxSizeMode.StretchImage
+        imgEnemy3.TabIndex = 3
+        imgEnemy3.TabStop = False
+        ' 
+        ' imgCharSprite3
+        ' 
+        imgCharSprite3.Image = CType(resources.GetObject("imgCharSprite3.Image"), Image)
+        imgCharSprite3.Location = New Point(178, 746)
+        imgCharSprite3.Name = "imgCharSprite3"
+        imgCharSprite3.Size = New Size(157, 243)
+        imgCharSprite3.SizeMode = PictureBoxSizeMode.StretchImage
+        imgCharSprite3.TabIndex = 2
+        imgCharSprite3.TabStop = False
+        ' 
         ' TabPage5
         ' 
         TabPage5.BackgroundImage = CType(resources.GetObject("TabPage5.BackgroundImage"), Image)
@@ -661,6 +749,8 @@ Partial Class Form1
         ' 
         SplitContainer4.Panel2.BackColor = Color.Transparent
         SplitContainer4.Panel2.BackgroundImageLayout = ImageLayout.Stretch
+        SplitContainer4.Panel2.Controls.Add(PictureBox3)
+        SplitContainer4.Panel2.Controls.Add(imgCharSprite4)
         SplitContainer4.Size = New Size(1892, 1031)
         SplitContainer4.SplitterDistance = 647
         SplitContainer4.TabIndex = 1
@@ -720,6 +810,7 @@ Partial Class Form1
         ' Panel4
         ' 
         Panel4.BorderStyle = BorderStyle.Fixed3D
+        Panel4.Controls.Add(Label5)
         Panel4.Controls.Add(lblTimer4)
         Panel4.Controls.Add(lblHP4)
         Panel4.Controls.Add(Label28)
@@ -728,16 +819,6 @@ Partial Class Form1
         Panel4.Name = "Panel4"
         Panel4.Size = New Size(641, 206)
         Panel4.TabIndex = 2
-        ' 
-        ' lblTimer4
-        ' 
-        lblTimer4.Font = New Font("Daydream", 32.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblTimer4.ForeColor = Color.FromArgb(CByte(255), CByte(195), CByte(0))
-        lblTimer4.Location = New Point(432, 12)
-        lblTimer4.Name = "lblTimer4"
-        lblTimer4.Size = New Size(206, 183)
-        lblTimer4.TabIndex = 6
-        lblTimer4.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' lblHP4
         ' 
@@ -781,6 +862,26 @@ Partial Class Form1
         lblQuestion4.Size = New Size(582, 344)
         lblQuestion4.TabIndex = 1
         lblQuestion4.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(402, 305)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(600, 600)
+        PictureBox3.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox3.TabIndex = 4
+        PictureBox3.TabStop = False
+        ' 
+        ' imgCharSprite4
+        ' 
+        imgCharSprite4.Image = CType(resources.GetObject("imgCharSprite4.Image"), Image)
+        imgCharSprite4.Location = New Point(103, 776)
+        imgCharSprite4.Name = "imgCharSprite4"
+        imgCharSprite4.Size = New Size(157, 243)
+        imgCharSprite4.SizeMode = PictureBoxSizeMode.StretchImage
+        imgCharSprite4.TabIndex = 3
+        imgCharSprite4.TabStop = False
         ' 
         ' TabPage6
         ' 
@@ -842,6 +943,80 @@ Partial Class Form1
         TabPage11.Text = "TabPage11"
         TabPage11.UseVisualStyleBackColor = True
         ' 
+        ' tmrBattle
+        ' 
+        tmrBattle.Interval = 1000
+        ' 
+        ' tmrAnimation
+        ' 
+        tmrAnimation.Interval = 850
+        ' 
+        ' Label3
+        ' 
+        Label3.Font = New Font("Daydream", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label3.ForeColor = Color.FromArgb(CByte(255), CByte(195), CByte(0))
+        Label3.Location = New Point(428, 0)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(206, 101)
+        Label3.TabIndex = 9
+        Label3.Text = "TIME LEFT:"
+        Label3.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' lblTimer2
+        ' 
+        lblTimer2.Font = New Font("Daydream", 32.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTimer2.ForeColor = Color.FromArgb(CByte(255), CByte(195), CByte(0))
+        lblTimer2.Location = New Point(428, 96)
+        lblTimer2.Name = "lblTimer2"
+        lblTimer2.Size = New Size(206, 101)
+        lblTimer2.TabIndex = 8
+        lblTimer2.Text = "30"
+        lblTimer2.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' Label4
+        ' 
+        Label4.Font = New Font("Daydream", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label4.ForeColor = Color.FromArgb(CByte(255), CByte(195), CByte(0))
+        Label4.Location = New Point(428, 0)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(206, 101)
+        Label4.TabIndex = 9
+        Label4.Text = "TIME LEFT:"
+        Label4.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' lblTimer3
+        ' 
+        lblTimer3.Font = New Font("Daydream", 32.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTimer3.ForeColor = Color.FromArgb(CByte(255), CByte(195), CByte(0))
+        lblTimer3.Location = New Point(428, 96)
+        lblTimer3.Name = "lblTimer3"
+        lblTimer3.Size = New Size(206, 101)
+        lblTimer3.TabIndex = 8
+        lblTimer3.Text = "30"
+        lblTimer3.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' Label5
+        ' 
+        Label5.Font = New Font("Daydream", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label5.ForeColor = Color.FromArgb(CByte(255), CByte(195), CByte(0))
+        Label5.Location = New Point(428, 0)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(206, 101)
+        Label5.TabIndex = 9
+        Label5.Text = "TIME LEFT:"
+        Label5.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' lblTimer4
+        ' 
+        lblTimer4.Font = New Font("Daydream", 32.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTimer4.ForeColor = Color.FromArgb(CByte(255), CByte(195), CByte(0))
+        lblTimer4.Location = New Point(428, 96)
+        lblTimer4.Name = "lblTimer4"
+        lblTimer4.Size = New Size(206, 101)
+        lblTimer4.TabIndex = 8
+        lblTimer4.Text = "30"
+        lblTimer4.TextAlign = ContentAlignment.MiddleCenter
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -852,36 +1027,48 @@ Partial Class Form1
         Text = "Form1"
         TabControl1.ResumeLayout(False)
         MenuTab.ResumeLayout(False)
-        MenuTab.PerformLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         TabPage2.ResumeLayout(False)
         SplitContainer1.Panel1.ResumeLayout(False)
+        SplitContainer1.Panel2.ResumeLayout(False)
         CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.ResumeLayout(False)
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         CType(imgChar1, ComponentModel.ISupportInitialize).EndInit()
+        CType(imgEnemy1, ComponentModel.ISupportInitialize).EndInit()
+        CType(imgCharSprite1, ComponentModel.ISupportInitialize).EndInit()
         TabPage3.ResumeLayout(False)
         SplitContainer2.Panel1.ResumeLayout(False)
+        SplitContainer2.Panel2.ResumeLayout(False)
         CType(SplitContainer2, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer2.ResumeLayout(False)
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
         CType(imgChar2, ComponentModel.ISupportInitialize).EndInit()
+        CType(imgEnemy2, ComponentModel.ISupportInitialize).EndInit()
+        CType(imgCharSprite2, ComponentModel.ISupportInitialize).EndInit()
         TabPage4.ResumeLayout(False)
         SplitContainer3.Panel1.ResumeLayout(False)
+        SplitContainer3.Panel2.ResumeLayout(False)
         CType(SplitContainer3, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer3.ResumeLayout(False)
         Panel3.ResumeLayout(False)
         Panel3.PerformLayout()
         CType(imgChar3, ComponentModel.ISupportInitialize).EndInit()
+        CType(imgEnemy3, ComponentModel.ISupportInitialize).EndInit()
+        CType(imgCharSprite3, ComponentModel.ISupportInitialize).EndInit()
         TabPage5.ResumeLayout(False)
         SplitContainer4.Panel1.ResumeLayout(False)
+        SplitContainer4.Panel2.ResumeLayout(False)
         CType(SplitContainer4, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer4.ResumeLayout(False)
         Panel4.ResumeLayout(False)
         Panel4.PerformLayout()
         CType(imgChar4, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        CType(imgCharSprite4, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -897,8 +1084,7 @@ Partial Class Form1
     Friend WithEvents TabPage9 As TabPage
     Friend WithEvents TabPage10 As TabPage
     Friend WithEvents TabPage11 As TabPage
-    Friend WithEvents Label1 As Label
-    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents imgEnemy2 As PictureBox
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents Panel1 As Panel
     Friend WithEvents lblTimer1 As Label
@@ -916,7 +1102,6 @@ Partial Class Form1
     Friend WithEvents lblAnswer2_2 As Label
     Friend WithEvents lblAnswer1_2 As Label
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents lblTimer2 As Label
     Friend WithEvents lblHP2 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents imgChar2 As PictureBox
@@ -927,7 +1112,6 @@ Partial Class Form1
     Friend WithEvents lblAnswer2_3 As Label
     Friend WithEvents lblAnswer1_3 As Label
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents lblTimer3 As Label
     Friend WithEvents lblHP3 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents imgChar3 As PictureBox
@@ -938,11 +1122,27 @@ Partial Class Form1
     Friend WithEvents lblAnswer2_4 As Label
     Friend WithEvents lblAnswer1_4 As Label
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents lblTimer4 As Label
     Friend WithEvents lblHP4 As Label
     Friend WithEvents Label28 As Label
     Friend WithEvents imgChar4 As PictureBox
     Friend WithEvents lblQuestion4 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents tmrBattle As Timer
+    Friend WithEvents imgCharSprite1 As PictureBox
+    Friend WithEvents imgEnemy1 As PictureBox
+    Friend WithEvents imgCharSprite2 As PictureBox
+    Friend WithEvents tmrAnimation As Timer
+    Friend WithEvents imgEnemy3 As PictureBox
+    Friend WithEvents imgCharSprite3 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents imgCharSprite4 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents lblTimer2 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents lblTimer3 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents lblTimer4 As Label
 
 End Class
