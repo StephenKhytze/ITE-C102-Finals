@@ -27,11 +27,11 @@ Partial Class Form1
         tmrBattle = New Timer(components)
         tmrAnimation = New Timer(components)
         tmrDia = New Timer(components)
-        TabPage1 = New TabPage()
-        Label6 = New Label()
-        PictureBox9 = New PictureBox()
-        PictureBox10 = New PictureBox()
-        TabPage11 = New TabPage()
+        StoryBegin = New TabPage()
+        lblStoryStart = New Label()
+        imgRelic = New PictureBox()
+        btnNext = New PictureBox()
+        CharSelect = New TabPage()
         btnAdventureStart = New PictureBox()
         radFemale = New RadioButton()
         radMale = New RadioButton()
@@ -40,11 +40,27 @@ Partial Class Form1
         PictureBox6 = New PictureBox()
         PictureBox5 = New PictureBox()
         PictureBox4 = New PictureBox()
-        TabPage10 = New TabPage()
+        Story4 = New TabPage()
+        Label10 = New Label()
+        btnStoryNext4 = New PictureBox()
+        PictureBox10 = New PictureBox()
+        imgCharSpriteStory4 = New PictureBox()
         TabPage9 = New TabPage()
-        TabPage8 = New TabPage()
-        TabPage7 = New TabPage()
-        TabPage5 = New TabPage()
+        Label8 = New Label()
+        btnStoryNext3 = New PictureBox()
+        PictureBox11 = New PictureBox()
+        imgCharSpriteStory3 = New PictureBox()
+        Story2 = New TabPage()
+        Label7 = New Label()
+        btnStoryNext2 = New PictureBox()
+        PictureBox9 = New PictureBox()
+        imgCharSpriteStory2 = New PictureBox()
+        Story1 = New TabPage()
+        btnStoryNext1 = New PictureBox()
+        Label6 = New Label()
+        PictureBox1 = New PictureBox()
+        imgCharSpriteStory1 = New PictureBox()
+        GameTab4 = New TabPage()
         SplitContainer4 = New SplitContainer()
         lblAnswer4_4 = New Label()
         lblAnswer3_4 = New Label()
@@ -59,7 +75,7 @@ Partial Class Form1
         lblQuestion4 = New Label()
         PictureBox3 = New PictureBox()
         imgCharSprite4 = New PictureBox()
-        TabPage4 = New TabPage()
+        GameTab3 = New TabPage()
         SplitContainer3 = New SplitContainer()
         lblAnswer4_3 = New Label()
         lblAnswer3_3 = New Label()
@@ -74,7 +90,7 @@ Partial Class Form1
         lblQuestion3 = New Label()
         imgEnemy3 = New PictureBox()
         imgCharSprite3 = New PictureBox()
-        TabPage3 = New TabPage()
+        GameTab2 = New TabPage()
         SplitContainer2 = New SplitContainer()
         lblAnswer4_2 = New Label()
         lblAnswer3_2 = New Label()
@@ -89,7 +105,7 @@ Partial Class Form1
         lblQuestion2 = New Label()
         imgEnemy2 = New PictureBox()
         imgCharSprite2 = New PictureBox()
-        TabPage2 = New TabPage()
+        GameTab1 = New TabPage()
         SplitContainer1 = New SplitContainer()
         lblAnswer4_1 = New Label()
         lblAnswer3_1 = New Label()
@@ -108,17 +124,33 @@ Partial Class Form1
         PictureBox2 = New PictureBox()
         btnStart = New PictureBox()
         TabControl1 = New TabControl()
-        TabPage1.SuspendLayout()
-        CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox10, ComponentModel.ISupportInitialize).BeginInit()
-        TabPage11.SuspendLayout()
+        StoryBegin.SuspendLayout()
+        CType(imgRelic, ComponentModel.ISupportInitialize).BeginInit()
+        CType(btnNext, ComponentModel.ISupportInitialize).BeginInit()
+        CharSelect.SuspendLayout()
         CType(btnAdventureStart, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
-        TabPage5.SuspendLayout()
+        Story4.SuspendLayout()
+        CType(btnStoryNext4, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox10, ComponentModel.ISupportInitialize).BeginInit()
+        CType(imgCharSpriteStory4, ComponentModel.ISupportInitialize).BeginInit()
+        TabPage9.SuspendLayout()
+        CType(btnStoryNext3, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox11, ComponentModel.ISupportInitialize).BeginInit()
+        CType(imgCharSpriteStory3, ComponentModel.ISupportInitialize).BeginInit()
+        Story2.SuspendLayout()
+        CType(btnStoryNext2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
+        CType(imgCharSpriteStory2, ComponentModel.ISupportInitialize).BeginInit()
+        Story1.SuspendLayout()
+        CType(btnStoryNext1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(imgCharSpriteStory1, ComponentModel.ISupportInitialize).BeginInit()
+        GameTab4.SuspendLayout()
         CType(SplitContainer4, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer4.Panel1.SuspendLayout()
         SplitContainer4.Panel2.SuspendLayout()
@@ -127,7 +159,7 @@ Partial Class Form1
         CType(imgChar4, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(imgCharSprite4, ComponentModel.ISupportInitialize).BeginInit()
-        TabPage4.SuspendLayout()
+        GameTab3.SuspendLayout()
         CType(SplitContainer3, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer3.Panel1.SuspendLayout()
         SplitContainer3.Panel2.SuspendLayout()
@@ -136,7 +168,7 @@ Partial Class Form1
         CType(imgChar3, ComponentModel.ISupportInitialize).BeginInit()
         CType(imgEnemy3, ComponentModel.ISupportInitialize).BeginInit()
         CType(imgCharSprite3, ComponentModel.ISupportInitialize).BeginInit()
-        TabPage3.SuspendLayout()
+        GameTab2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer2.Panel1.SuspendLayout()
         SplitContainer2.Panel2.SuspendLayout()
@@ -145,7 +177,7 @@ Partial Class Form1
         CType(imgChar2, ComponentModel.ISupportInitialize).BeginInit()
         CType(imgEnemy2, ComponentModel.ISupportInitialize).BeginInit()
         CType(imgCharSprite2, ComponentModel.ISupportInitialize).BeginInit()
-        TabPage2.SuspendLayout()
+        GameTab1.SuspendLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
         SplitContainer1.Panel2.SuspendLayout()
@@ -171,69 +203,69 @@ Partial Class Form1
         ' tmrDia
         ' 
         ' 
-        ' TabPage1
+        ' StoryBegin
         ' 
-        TabPage1.BackColor = Color.FromArgb(CByte(4), CByte(11), CByte(21))
-        TabPage1.Controls.Add(Label6)
-        TabPage1.Controls.Add(PictureBox9)
-        TabPage1.Controls.Add(PictureBox10)
-        TabPage1.Location = New Point(4, 24)
-        TabPage1.Name = "TabPage1"
-        TabPage1.Padding = New Padding(3)
-        TabPage1.Size = New Size(1898, 1037)
-        TabPage1.TabIndex = 11
-        TabPage1.Text = "TabPage1"
+        StoryBegin.BackColor = Color.FromArgb(CByte(4), CByte(11), CByte(21))
+        StoryBegin.Controls.Add(lblStoryStart)
+        StoryBegin.Controls.Add(imgRelic)
+        StoryBegin.Controls.Add(btnNext)
+        StoryBegin.Location = New Point(4, 24)
+        StoryBegin.Name = "StoryBegin"
+        StoryBegin.Padding = New Padding(3)
+        StoryBegin.Size = New Size(1898, 1037)
+        StoryBegin.TabIndex = 11
+        StoryBegin.Text = "Story Beginning"
         ' 
-        ' Label6
+        ' lblStoryStart
         ' 
-        Label6.BackColor = Color.Transparent
-        Label6.Font = New Font("Stencil", 27.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label6.ForeColor = SystemColors.ButtonFace
-        Label6.Location = New Point(113, 440)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(1634, 254)
-        Label6.TabIndex = 0
-        Label6.TextAlign = ContentAlignment.MiddleCenter
+        lblStoryStart.BackColor = Color.Transparent
+        lblStoryStart.Font = New Font("Stencil", 27.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblStoryStart.ForeColor = SystemColors.ButtonFace
+        lblStoryStart.Location = New Point(113, 440)
+        lblStoryStart.Name = "lblStoryStart"
+        lblStoryStart.Size = New Size(1634, 254)
+        lblStoryStart.TabIndex = 0
+        lblStoryStart.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' PictureBox9
+        ' imgRelic
         ' 
-        PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), Image)
-        PictureBox9.Location = New Point(754, 6)
-        PictureBox9.Name = "PictureBox9"
-        PictureBox9.Size = New Size(367, 351)
-        PictureBox9.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox9.TabIndex = 2
-        PictureBox9.TabStop = False
+        imgRelic.Image = CType(resources.GetObject("imgRelic.Image"), Image)
+        imgRelic.Location = New Point(754, 6)
+        imgRelic.Name = "imgRelic"
+        imgRelic.Size = New Size(367, 351)
+        imgRelic.SizeMode = PictureBoxSizeMode.StretchImage
+        imgRelic.TabIndex = 2
+        imgRelic.TabStop = False
         ' 
-        ' PictureBox10
+        ' btnNext
         ' 
-        PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), Image)
-        PictureBox10.Location = New Point(1594, 756)
-        PictureBox10.Name = "PictureBox10"
-        PictureBox10.Size = New Size(267, 77)
-        PictureBox10.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox10.TabIndex = 1
-        PictureBox10.TabStop = False
+        btnNext.Image = CType(resources.GetObject("btnNext.Image"), Image)
+        btnNext.Location = New Point(1594, 756)
+        btnNext.Name = "btnNext"
+        btnNext.Size = New Size(267, 77)
+        btnNext.SizeMode = PictureBoxSizeMode.Zoom
+        btnNext.TabIndex = 1
+        btnNext.TabStop = False
         ' 
-        ' TabPage11
+        ' CharSelect
         ' 
-        TabPage11.BackgroundImage = My.Resources.Resources.sunset_rice_paddy_artwork_lens_flare_wallpaper_preview
-        TabPage11.BackgroundImageLayout = ImageLayout.Stretch
-        TabPage11.Controls.Add(btnAdventureStart)
-        TabPage11.Controls.Add(radFemale)
-        TabPage11.Controls.Add(radMale)
-        TabPage11.Controls.Add(PictureBox8)
-        TabPage11.Controls.Add(PictureBox7)
-        TabPage11.Controls.Add(PictureBox6)
-        TabPage11.Controls.Add(PictureBox5)
-        TabPage11.Controls.Add(PictureBox4)
-        TabPage11.Location = New Point(4, 24)
-        TabPage11.Name = "TabPage11"
-        TabPage11.Padding = New Padding(3)
-        TabPage11.Size = New Size(1898, 1037)
-        TabPage11.TabIndex = 10
-        TabPage11.Text = "Character Select"
-        TabPage11.UseVisualStyleBackColor = True
+        CharSelect.BackgroundImage = My.Resources.Resources.sunset_rice_paddy_artwork_lens_flare_wallpaper_preview
+        CharSelect.BackgroundImageLayout = ImageLayout.Stretch
+        CharSelect.Controls.Add(btnAdventureStart)
+        CharSelect.Controls.Add(radFemale)
+        CharSelect.Controls.Add(radMale)
+        CharSelect.Controls.Add(PictureBox8)
+        CharSelect.Controls.Add(PictureBox7)
+        CharSelect.Controls.Add(PictureBox6)
+        CharSelect.Controls.Add(PictureBox5)
+        CharSelect.Controls.Add(PictureBox4)
+        CharSelect.Location = New Point(4, 24)
+        CharSelect.Name = "CharSelect"
+        CharSelect.Padding = New Padding(3)
+        CharSelect.Size = New Size(1898, 1037)
+        CharSelect.TabIndex = 10
+        CharSelect.Text = "Character Select"
+        CharSelect.UseVisualStyleBackColor = True
         ' 
         ' btnAdventureStart
         ' 
@@ -320,58 +352,246 @@ Partial Class Form1
         PictureBox4.TabIndex = 0
         PictureBox4.TabStop = False
         ' 
-        ' TabPage10
+        ' Story4
         ' 
-        TabPage10.Location = New Point(4, 24)
-        TabPage10.Name = "TabPage10"
-        TabPage10.Padding = New Padding(3)
-        TabPage10.Size = New Size(1898, 1037)
-        TabPage10.TabIndex = 9
-        TabPage10.Text = "TabPage10"
-        TabPage10.UseVisualStyleBackColor = True
+        Story4.BackgroundImage = My.Resources.Resources._60772b5722ed19cb
+        Story4.BackgroundImageLayout = ImageLayout.Stretch
+        Story4.Controls.Add(Label10)
+        Story4.Controls.Add(btnStoryNext4)
+        Story4.Controls.Add(PictureBox10)
+        Story4.Controls.Add(imgCharSpriteStory4)
+        Story4.Location = New Point(4, 24)
+        Story4.Name = "Story4"
+        Story4.Padding = New Padding(3)
+        Story4.Size = New Size(1898, 1037)
+        Story4.TabIndex = 9
+        Story4.Text = "Story 4"
+        Story4.UseVisualStyleBackColor = True
+        ' 
+        ' Label10
+        ' 
+        Label10.Font = New Font("04b", 21.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label10.ForeColor = Color.FromArgb(CByte(255), CByte(195), CByte(0))
+        Label10.Location = New Point(237, -1)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(1432, 310)
+        Label10.TabIndex = 10
+        Label10.Text = resources.GetString("Label10.Text")
+        Label10.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' btnStoryNext4
+        ' 
+        btnStoryNext4.Image = CType(resources.GetObject("btnStoryNext4.Image"), Image)
+        btnStoryNext4.Location = New Point(1631, 892)
+        btnStoryNext4.Name = "btnStoryNext4"
+        btnStoryNext4.Size = New Size(267, 77)
+        btnStoryNext4.SizeMode = PictureBoxSizeMode.Zoom
+        btnStoryNext4.TabIndex = 8
+        btnStoryNext4.TabStop = False
+        ' 
+        ' PictureBox10
+        ' 
+        PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), Image)
+        PictureBox10.Location = New Point(810, 312)
+        PictureBox10.Name = "PictureBox10"
+        PictureBox10.Size = New Size(600, 600)
+        PictureBox10.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox10.TabIndex = 6
+        PictureBox10.TabStop = False
+        ' 
+        ' imgCharSpriteStory4
+        ' 
+        imgCharSpriteStory4.Image = CType(resources.GetObject("imgCharSpriteStory4.Image"), Image)
+        imgCharSpriteStory4.Location = New Point(173, 778)
+        imgCharSpriteStory4.Name = "imgCharSpriteStory4"
+        imgCharSpriteStory4.Size = New Size(157, 243)
+        imgCharSpriteStory4.SizeMode = PictureBoxSizeMode.Zoom
+        imgCharSpriteStory4.TabIndex = 5
+        imgCharSpriteStory4.TabStop = False
         ' 
         ' TabPage9
         ' 
+        TabPage9.BackgroundImage = My.Resources.Resources.cave
+        TabPage9.BackgroundImageLayout = ImageLayout.Stretch
+        TabPage9.Controls.Add(Label8)
+        TabPage9.Controls.Add(btnStoryNext3)
+        TabPage9.Controls.Add(PictureBox11)
+        TabPage9.Controls.Add(imgCharSpriteStory3)
         TabPage9.Location = New Point(4, 24)
         TabPage9.Name = "TabPage9"
         TabPage9.Padding = New Padding(3)
         TabPage9.Size = New Size(1898, 1037)
         TabPage9.TabIndex = 8
-        TabPage9.Text = "TabPage9"
+        TabPage9.Text = "Story 3"
         TabPage9.UseVisualStyleBackColor = True
         ' 
-        ' TabPage8
+        ' Label8
         ' 
-        TabPage8.Location = New Point(4, 24)
-        TabPage8.Name = "TabPage8"
-        TabPage8.Padding = New Padding(3)
-        TabPage8.Size = New Size(1898, 1037)
-        TabPage8.TabIndex = 7
-        TabPage8.Text = "TabPage8"
-        TabPage8.UseVisualStyleBackColor = True
+        Label8.Font = New Font("04b", 26.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label8.ForeColor = Color.FromArgb(CByte(255), CByte(195), CByte(0))
+        Label8.Location = New Point(79, 70)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(1082, 341)
+        Label8.TabIndex = 8
+        Label8.Text = resources.GetString("Label8.Text")
+        Label8.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' TabPage7
+        ' btnStoryNext3
         ' 
-        TabPage7.Location = New Point(4, 24)
-        TabPage7.Name = "TabPage7"
-        TabPage7.Padding = New Padding(3)
-        TabPage7.Size = New Size(1898, 1037)
-        TabPage7.TabIndex = 6
-        TabPage7.Text = "TabPage7"
-        TabPage7.UseVisualStyleBackColor = True
+        btnStoryNext3.Image = CType(resources.GetObject("btnStoryNext3.Image"), Image)
+        btnStoryNext3.Location = New Point(1631, 892)
+        btnStoryNext3.Name = "btnStoryNext3"
+        btnStoryNext3.Size = New Size(267, 77)
+        btnStoryNext3.SizeMode = PictureBoxSizeMode.Zoom
+        btnStoryNext3.TabIndex = 7
+        btnStoryNext3.TabStop = False
         ' 
-        ' TabPage5
+        ' PictureBox11
         ' 
-        TabPage5.BackgroundImage = CType(resources.GetObject("TabPage5.BackgroundImage"), Image)
-        TabPage5.BackgroundImageLayout = ImageLayout.Stretch
-        TabPage5.Controls.Add(SplitContainer4)
-        TabPage5.Location = New Point(4, 24)
-        TabPage5.Name = "TabPage5"
-        TabPage5.Padding = New Padding(3)
-        TabPage5.Size = New Size(1898, 1037)
-        TabPage5.TabIndex = 4
-        TabPage5.Text = "TabPage5"
-        TabPage5.UseVisualStyleBackColor = True
+        PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), Image)
+        PictureBox11.Location = New Point(1257, 52)
+        PictureBox11.Name = "PictureBox11"
+        PictureBox11.Size = New Size(517, 478)
+        PictureBox11.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox11.TabIndex = 5
+        PictureBox11.TabStop = False
+        ' 
+        ' imgCharSpriteStory3
+        ' 
+        imgCharSpriteStory3.Image = CType(resources.GetObject("imgCharSpriteStory3.Image"), Image)
+        imgCharSpriteStory3.Location = New Point(261, 760)
+        imgCharSpriteStory3.Name = "imgCharSpriteStory3"
+        imgCharSpriteStory3.Size = New Size(157, 243)
+        imgCharSpriteStory3.SizeMode = PictureBoxSizeMode.Zoom
+        imgCharSpriteStory3.TabIndex = 4
+        imgCharSpriteStory3.TabStop = False
+        ' 
+        ' Story2
+        ' 
+        Story2.BackgroundImage = My.Resources.Resources._360_F_563976540_1pe4FVuJuEEP3o1gbVfyrikw0mTMm6cj
+        Story2.BackgroundImageLayout = ImageLayout.Stretch
+        Story2.Controls.Add(Label7)
+        Story2.Controls.Add(btnStoryNext2)
+        Story2.Controls.Add(PictureBox9)
+        Story2.Controls.Add(imgCharSpriteStory2)
+        Story2.Location = New Point(4, 24)
+        Story2.Name = "Story2"
+        Story2.Padding = New Padding(3)
+        Story2.Size = New Size(1898, 1037)
+        Story2.TabIndex = 7
+        Story2.Text = "Story 2"
+        Story2.UseVisualStyleBackColor = True
+        ' 
+        ' Label7
+        ' 
+        Label7.Font = New Font("04b", 26.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label7.ForeColor = Color.FromArgb(CByte(255), CByte(195), CByte(0))
+        Label7.Location = New Point(237, 22)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(1432, 310)
+        Label7.TabIndex = 7
+        Label7.Text = resources.GetString("Label7.Text")
+        Label7.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' btnStoryNext2
+        ' 
+        btnStoryNext2.Image = CType(resources.GetObject("btnStoryNext2.Image"), Image)
+        btnStoryNext2.Location = New Point(1631, 892)
+        btnStoryNext2.Name = "btnStoryNext2"
+        btnStoryNext2.Size = New Size(267, 77)
+        btnStoryNext2.SizeMode = PictureBoxSizeMode.Zoom
+        btnStoryNext2.TabIndex = 6
+        btnStoryNext2.TabStop = False
+        ' 
+        ' PictureBox9
+        ' 
+        PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), Image)
+        PictureBox9.Location = New Point(1037, 410)
+        PictureBox9.Name = "PictureBox9"
+        PictureBox9.Size = New Size(580, 593)
+        PictureBox9.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox9.TabIndex = 3
+        PictureBox9.TabStop = False
+        ' 
+        ' imgCharSpriteStory2
+        ' 
+        imgCharSpriteStory2.Image = CType(resources.GetObject("imgCharSpriteStory2.Image"), Image)
+        imgCharSpriteStory2.Location = New Point(832, 597)
+        imgCharSpriteStory2.Name = "imgCharSpriteStory2"
+        imgCharSpriteStory2.Size = New Size(157, 243)
+        imgCharSpriteStory2.SizeMode = PictureBoxSizeMode.Zoom
+        imgCharSpriteStory2.TabIndex = 2
+        imgCharSpriteStory2.TabStop = False
+        ' 
+        ' Story1
+        ' 
+        Story1.BackgroundImage = My.Resources.Resources.ddxkac6_ebe2ffce_8080_4ebf_b301_598019f384b0
+        Story1.BackgroundImageLayout = ImageLayout.Stretch
+        Story1.Controls.Add(btnStoryNext1)
+        Story1.Controls.Add(Label6)
+        Story1.Controls.Add(PictureBox1)
+        Story1.Controls.Add(imgCharSpriteStory1)
+        Story1.Location = New Point(4, 24)
+        Story1.Name = "Story1"
+        Story1.Padding = New Padding(3)
+        Story1.Size = New Size(1898, 1037)
+        Story1.TabIndex = 6
+        Story1.Text = "Story1"
+        Story1.UseVisualStyleBackColor = True
+        ' 
+        ' btnStoryNext1
+        ' 
+        btnStoryNext1.Image = CType(resources.GetObject("btnStoryNext1.Image"), Image)
+        btnStoryNext1.Location = New Point(1631, 892)
+        btnStoryNext1.Name = "btnStoryNext1"
+        btnStoryNext1.Size = New Size(267, 77)
+        btnStoryNext1.SizeMode = PictureBoxSizeMode.Zoom
+        btnStoryNext1.TabIndex = 5
+        btnStoryNext1.TabStop = False
+        ' 
+        ' Label6
+        ' 
+        Label6.Font = New Font("04b", 27.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label6.ForeColor = Color.FromArgb(CByte(255), CByte(195), CByte(0))
+        Label6.Location = New Point(237, 34)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(1432, 232)
+        Label6.TabIndex = 4
+        Label6.Text = resources.GetString("Label6.Text")
+        Label6.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(732, 390)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(642, 579)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 3
+        PictureBox1.TabStop = False
+        ' 
+        ' imgCharSpriteStory1
+        ' 
+        imgCharSpriteStory1.Image = My.Resources.Resources.charGirlSpriteIdle2
+        imgCharSpriteStory1.Location = New Point(396, 475)
+        imgCharSpriteStory1.Name = "imgCharSpriteStory1"
+        imgCharSpriteStory1.Size = New Size(157, 243)
+        imgCharSpriteStory1.SizeMode = PictureBoxSizeMode.Zoom
+        imgCharSpriteStory1.TabIndex = 2
+        imgCharSpriteStory1.TabStop = False
+        ' 
+        ' GameTab4
+        ' 
+        GameTab4.BackgroundImage = CType(resources.GetObject("GameTab4.BackgroundImage"), Image)
+        GameTab4.BackgroundImageLayout = ImageLayout.Stretch
+        GameTab4.Controls.Add(SplitContainer4)
+        GameTab4.Location = New Point(4, 24)
+        GameTab4.Name = "GameTab4"
+        GameTab4.Padding = New Padding(3)
+        GameTab4.Size = New Size(1898, 1037)
+        GameTab4.TabIndex = 4
+        GameTab4.Text = "Game Tab 4"
+        GameTab4.UseVisualStyleBackColor = True
         ' 
         ' SplitContainer4
         ' 
@@ -549,18 +769,18 @@ Partial Class Form1
         imgCharSprite4.TabIndex = 3
         imgCharSprite4.TabStop = False
         ' 
-        ' TabPage4
+        ' GameTab3
         ' 
-        TabPage4.BackgroundImage = CType(resources.GetObject("TabPage4.BackgroundImage"), Image)
-        TabPage4.BackgroundImageLayout = ImageLayout.Stretch
-        TabPage4.Controls.Add(SplitContainer3)
-        TabPage4.Location = New Point(4, 24)
-        TabPage4.Name = "TabPage4"
-        TabPage4.Padding = New Padding(3)
-        TabPage4.Size = New Size(1898, 1037)
-        TabPage4.TabIndex = 3
-        TabPage4.Text = "TabPage4"
-        TabPage4.UseVisualStyleBackColor = True
+        GameTab3.BackgroundImage = CType(resources.GetObject("GameTab3.BackgroundImage"), Image)
+        GameTab3.BackgroundImageLayout = ImageLayout.Stretch
+        GameTab3.Controls.Add(SplitContainer3)
+        GameTab3.Location = New Point(4, 24)
+        GameTab3.Name = "GameTab3"
+        GameTab3.Padding = New Padding(3)
+        GameTab3.Size = New Size(1898, 1037)
+        GameTab3.TabIndex = 3
+        GameTab3.Text = "Game Tab 3"
+        GameTab3.UseVisualStyleBackColor = True
         ' 
         ' SplitContainer3
         ' 
@@ -738,18 +958,18 @@ Partial Class Form1
         imgCharSprite3.TabIndex = 2
         imgCharSprite3.TabStop = False
         ' 
-        ' TabPage3
+        ' GameTab2
         ' 
-        TabPage3.BackgroundImage = CType(resources.GetObject("TabPage3.BackgroundImage"), Image)
-        TabPage3.BackgroundImageLayout = ImageLayout.Stretch
-        TabPage3.Controls.Add(SplitContainer2)
-        TabPage3.Location = New Point(4, 24)
-        TabPage3.Name = "TabPage3"
-        TabPage3.Padding = New Padding(3)
-        TabPage3.Size = New Size(1898, 1037)
-        TabPage3.TabIndex = 2
-        TabPage3.Text = "TabPage3"
-        TabPage3.UseVisualStyleBackColor = True
+        GameTab2.BackgroundImage = CType(resources.GetObject("GameTab2.BackgroundImage"), Image)
+        GameTab2.BackgroundImageLayout = ImageLayout.Stretch
+        GameTab2.Controls.Add(SplitContainer2)
+        GameTab2.Location = New Point(4, 24)
+        GameTab2.Name = "GameTab2"
+        GameTab2.Padding = New Padding(3)
+        GameTab2.Size = New Size(1898, 1037)
+        GameTab2.TabIndex = 2
+        GameTab2.Text = "Game Tab 2"
+        GameTab2.UseVisualStyleBackColor = True
         ' 
         ' SplitContainer2
         ' 
@@ -927,18 +1147,18 @@ Partial Class Form1
         imgCharSprite2.TabIndex = 0
         imgCharSprite2.TabStop = False
         ' 
-        ' TabPage2
+        ' GameTab1
         ' 
-        TabPage2.BackgroundImage = CType(resources.GetObject("TabPage2.BackgroundImage"), Image)
-        TabPage2.BackgroundImageLayout = ImageLayout.Stretch
-        TabPage2.Controls.Add(SplitContainer1)
-        TabPage2.Location = New Point(4, 24)
-        TabPage2.Name = "TabPage2"
-        TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(1898, 1037)
-        TabPage2.TabIndex = 1
-        TabPage2.Text = "TabPage2"
-        TabPage2.UseVisualStyleBackColor = True
+        GameTab1.BackgroundImage = CType(resources.GetObject("GameTab1.BackgroundImage"), Image)
+        GameTab1.BackgroundImageLayout = ImageLayout.Stretch
+        GameTab1.Controls.Add(SplitContainer1)
+        GameTab1.Location = New Point(4, 24)
+        GameTab1.Name = "GameTab1"
+        GameTab1.Padding = New Padding(3)
+        GameTab1.Size = New Size(1898, 1037)
+        GameTab1.TabIndex = 1
+        GameTab1.Text = "Game Tab 1"
+        GameTab1.UseVisualStyleBackColor = True
         ' 
         ' SplitContainer1
         ' 
@@ -1155,17 +1375,17 @@ Partial Class Form1
         ' 
         TabControl1.AccessibleRole = AccessibleRole.OutlineButton
         TabControl1.Controls.Add(MenuTab)
-        TabControl1.Controls.Add(TabPage2)
-        TabControl1.Controls.Add(TabPage3)
-        TabControl1.Controls.Add(TabPage4)
-        TabControl1.Controls.Add(TabPage5)
-        TabControl1.Controls.Add(TabPage7)
-        TabControl1.Controls.Add(TabPage8)
+        TabControl1.Controls.Add(GameTab1)
+        TabControl1.Controls.Add(GameTab2)
+        TabControl1.Controls.Add(GameTab3)
+        TabControl1.Controls.Add(GameTab4)
+        TabControl1.Controls.Add(Story1)
+        TabControl1.Controls.Add(Story2)
         TabControl1.Controls.Add(TabPage9)
-        TabControl1.Controls.Add(TabPage10)
-        TabControl1.Controls.Add(TabPage11)
-        TabControl1.Controls.Add(TabPage1)
-        TabControl1.Location = New Point(2, 2)
+        TabControl1.Controls.Add(Story4)
+        TabControl1.Controls.Add(CharSelect)
+        TabControl1.Controls.Add(StoryBegin)
+        TabControl1.Location = New Point(2, 1)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
         TabControl1.Size = New Size(1906, 1065)
@@ -1179,18 +1399,34 @@ Partial Class Form1
         Controls.Add(TabControl1)
         Name = "Form1"
         Text = "Form1"
-        TabPage1.ResumeLayout(False)
-        CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox10, ComponentModel.ISupportInitialize).EndInit()
-        TabPage11.ResumeLayout(False)
-        TabPage11.PerformLayout()
+        StoryBegin.ResumeLayout(False)
+        CType(imgRelic, ComponentModel.ISupportInitialize).EndInit()
+        CType(btnNext, ComponentModel.ISupportInitialize).EndInit()
+        CharSelect.ResumeLayout(False)
+        CharSelect.PerformLayout()
         CType(btnAdventureStart, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
-        TabPage5.ResumeLayout(False)
+        Story4.ResumeLayout(False)
+        CType(btnStoryNext4, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox10, ComponentModel.ISupportInitialize).EndInit()
+        CType(imgCharSpriteStory4, ComponentModel.ISupportInitialize).EndInit()
+        TabPage9.ResumeLayout(False)
+        CType(btnStoryNext3, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox11, ComponentModel.ISupportInitialize).EndInit()
+        CType(imgCharSpriteStory3, ComponentModel.ISupportInitialize).EndInit()
+        Story2.ResumeLayout(False)
+        CType(btnStoryNext2, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
+        CType(imgCharSpriteStory2, ComponentModel.ISupportInitialize).EndInit()
+        Story1.ResumeLayout(False)
+        CType(btnStoryNext1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(imgCharSpriteStory1, ComponentModel.ISupportInitialize).EndInit()
+        GameTab4.ResumeLayout(False)
         SplitContainer4.Panel1.ResumeLayout(False)
         SplitContainer4.Panel2.ResumeLayout(False)
         CType(SplitContainer4, ComponentModel.ISupportInitialize).EndInit()
@@ -1200,7 +1436,7 @@ Partial Class Form1
         CType(imgChar4, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         CType(imgCharSprite4, ComponentModel.ISupportInitialize).EndInit()
-        TabPage4.ResumeLayout(False)
+        GameTab3.ResumeLayout(False)
         SplitContainer3.Panel1.ResumeLayout(False)
         SplitContainer3.Panel2.ResumeLayout(False)
         CType(SplitContainer3, ComponentModel.ISupportInitialize).EndInit()
@@ -1210,7 +1446,7 @@ Partial Class Form1
         CType(imgChar3, ComponentModel.ISupportInitialize).EndInit()
         CType(imgEnemy3, ComponentModel.ISupportInitialize).EndInit()
         CType(imgCharSprite3, ComponentModel.ISupportInitialize).EndInit()
-        TabPage3.ResumeLayout(False)
+        GameTab2.ResumeLayout(False)
         SplitContainer2.Panel1.ResumeLayout(False)
         SplitContainer2.Panel2.ResumeLayout(False)
         CType(SplitContainer2, ComponentModel.ISupportInitialize).EndInit()
@@ -1220,7 +1456,7 @@ Partial Class Form1
         CType(imgChar2, ComponentModel.ISupportInitialize).EndInit()
         CType(imgEnemy2, ComponentModel.ISupportInitialize).EndInit()
         CType(imgCharSprite2, ComponentModel.ISupportInitialize).EndInit()
-        TabPage2.ResumeLayout(False)
+        GameTab1.ResumeLayout(False)
         SplitContainer1.Panel1.ResumeLayout(False)
         SplitContainer1.Panel2.ResumeLayout(False)
         CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
@@ -1239,11 +1475,11 @@ Partial Class Form1
     Friend WithEvents tmrBattle As Timer
     Friend WithEvents tmrAnimation As Timer
     Friend WithEvents tmrDia As Timer
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents Label6 As Label
-    Friend WithEvents PictureBox9 As PictureBox
-    Friend WithEvents PictureBox10 As PictureBox
-    Friend WithEvents TabPage11 As TabPage
+    Friend WithEvents StoryBegin As TabPage
+    Friend WithEvents lblStoryStart As Label
+    Friend WithEvents imgRelic As PictureBox
+    Friend WithEvents btnNext As PictureBox
+    Friend WithEvents CharSelect As TabPage
     Friend WithEvents btnAdventureStart As PictureBox
     Friend WithEvents radFemale As RadioButton
     Friend WithEvents radMale As RadioButton
@@ -1252,11 +1488,11 @@ Partial Class Form1
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents TabPage10 As TabPage
+    Friend WithEvents Story4 As TabPage
     Friend WithEvents TabPage9 As TabPage
-    Friend WithEvents TabPage8 As TabPage
-    Friend WithEvents TabPage7 As TabPage
-    Friend WithEvents TabPage5 As TabPage
+    Friend WithEvents Story2 As TabPage
+    Friend WithEvents Story1 As TabPage
+    Friend WithEvents GameTab4 As TabPage
     Friend WithEvents SplitContainer4 As SplitContainer
     Friend WithEvents lblAnswer4_4 As Label
     Friend WithEvents lblAnswer3_4 As Label
@@ -1271,7 +1507,7 @@ Partial Class Form1
     Friend WithEvents lblQuestion4 As Label
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents imgCharSprite4 As PictureBox
-    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents GameTab3 As TabPage
     Friend WithEvents SplitContainer3 As SplitContainer
     Friend WithEvents lblAnswer4_3 As Label
     Friend WithEvents lblAnswer3_3 As Label
@@ -1286,7 +1522,7 @@ Partial Class Form1
     Friend WithEvents lblQuestion3 As Label
     Friend WithEvents imgEnemy3 As PictureBox
     Friend WithEvents imgCharSprite3 As PictureBox
-    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents GameTab2 As TabPage
     Friend WithEvents SplitContainer2 As SplitContainer
     Friend WithEvents lblAnswer4_2 As Label
     Friend WithEvents lblAnswer3_2 As Label
@@ -1300,7 +1536,7 @@ Partial Class Form1
     Friend WithEvents lblQuestion2 As Label
     Friend WithEvents imgEnemy2 As PictureBox
     Friend WithEvents imgCharSprite2 As PictureBox
-    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents GameTab1 As TabPage
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents lblAnswer4_1 As Label
     Friend WithEvents lblAnswer3_1 As Label
@@ -1320,5 +1556,21 @@ Partial Class Form1
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents imgCharSpriteStory1 As PictureBox
+    Friend WithEvents PictureBox10 As PictureBox
+    Friend WithEvents imgCharSpriteStory4 As PictureBox
+    Friend WithEvents PictureBox11 As PictureBox
+    Friend WithEvents imgCharSpriteStory3 As PictureBox
+    Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents imgCharSpriteStory2 As PictureBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents btnStoryNext4 As PictureBox
+    Friend WithEvents btnStoryNext3 As PictureBox
+    Friend WithEvents btnStoryNext2 As PictureBox
+    Friend WithEvents btnStoryNext1 As PictureBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label10 As Label
 
 End Class

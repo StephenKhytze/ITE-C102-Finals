@@ -7,7 +7,7 @@ Public Class Form1
     Dim playerHP As Integer = 3
     Dim enemyHP1, enemyHP2, enemyHP3, enemyHP4 As Integer
     Dim charGender As String
-    Dim playerCharAttack, playerCharHurt, playerCharIdle, playerCharAttack2, playerCharHurt2, playerCharIdle2, playerCharStory As Image
+    Dim playerCharAttack, playerCharHurt, playerCharIdle, playerCharAttack2, playerCharHurt2, playerCharIdle2, playerCharStory, playerCharStory2 As Image
     Dim battleTimer As Integer = 30
     Dim texts As List(Of String) = New List(Of String)()
     Dim currentTextIndex As Integer = 0
@@ -51,8 +51,6 @@ Public Class Form1
 
     Private Sub lblAnswer1_1_Click(sender As Object, e As EventArgs) Handles lblAnswer1_1.Click
         tmrAnimation.Start()
-        tmrBattle.Start()
-
         If enemyHP1 = 5 Then
             imgCharSprite1.Image = playerCharAttack
             enemyHP1 -= 1
@@ -466,7 +464,8 @@ Public Class Form1
             playerCharIdle2 = My.Resources.charBoySpriteIdle2
             playerCharAttack2 = My.Resources.charBoySpriteAttack2
             playerCharHurt2 = My.Resources.charBoyHurtSprite2
-            playerCharStory = My.Resources.charBoySpriteIdle2
+            playerCharStory = My.Resources.charBoySpriteIdle
+            playerCharStory2 = My.Resources.charBoySpriteIdle2
         ElseIf radFemale.Checked Then
             playerCharIdle = My.Resources.charGirlSpriteIdle
             playerCharAttack = My.Resources.charGIrlSpriteAttack
@@ -474,7 +473,8 @@ Public Class Form1
             playerCharIdle2 = My.Resources.charGirlSpriteIdle2
             playerCharAttack2 = My.Resources.charGirlSpriteAttack2
             playerCharHurt2 = My.Resources.charGirlHurtSprite2
-            playerCharStory = My.Resources.charGirlSpriteIdle2
+            playerCharStory = My.Resources.charGirlSpriteIdle
+            playerCharStory2 = My.Resources.charGirlSpriteIdle2
         Else
             MessageBox.Show("Please select a character.", "Character Selection", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
@@ -482,14 +482,18 @@ Public Class Form1
         imgCharSprite2.Image = playerCharIdle2
         imgCharSprite3.Image = playerCharIdle
         imgCharSprite4.Image = playerCharIdle
+        imgCharSpriteStory1.Image = playerCharIdle2
+        imgCharSpriteStory2.Image = playerCharIdle2
+        imgCharSpriteStory3.Image = playerCharIdle
+        imgCharSpriteStory4.Image = playerCharIdle
 
         tmrDia.Start()
-        TabControl1.SelectedTab = TabPage1
+        TabControl1.SelectedTab = StoryBegin
     End Sub
 
     Private Sub tmrDia_Tick(sender As Object, e As EventArgs)
         If currentIndex <= texts(currentTextIndex).Length Then
-            Label6.Text = texts(currentTextIndex).Substring(0, currentIndex)
+            lblStoryStart.Text = texts(currentTextIndex).Substring(0, currentIndex)
             currentIndex += 1
         Else
             tmrDia.Stop()
@@ -497,19 +501,19 @@ Public Class Form1
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles btnStart.Click
-        TabControl1.SelectedTab = TabPage11
+        TabControl1.SelectedTab = CharSelect
     End Sub
     Private Sub OpacityTimer_Tick(sender As Object, e As EventArgs)
         If currentOpacity < 1.0 Then
             currentOpacity += 0.1
-            DrawImageWithOpacity(image, PictureBox9, currentOpacity)
+            DrawImageWithOpacity(image, imgRelic, currentOpacity)
         Else
             opacityTimer.Stop()
         End If
     End Sub
     Private Sub UpdateLabelText()
         If currentTextIndex < texts.Count Then
-            Label6.Text = texts(currentTextIndex)
+            lblStoryStart.Text = texts(currentTextIndex)
         End If
     End Sub
     Private Sub DrawImageWithOpacity(image As Image, pictureBox As PictureBox, opacity As Single)
@@ -530,35 +534,46 @@ Public Class Form1
 
         g.DrawImage(image, New Rectangle(0, 0, image.Width, image.Height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, attributes)
 
-        PictureBox9.Image = bmp
+        imgRelic.Image = bmp
     End Sub
 
     Private Sub tmrDia_Tick_1(sender As Object, e As EventArgs) Handles tmrDia.Tick
         If currentIndex <= texts(currentTextIndex).Length Then
-            Label6.Text = texts(currentTextIndex).Substring(0, currentIndex)
+            lblStoryStart.Text = texts(currentTextIndex).Substring(0, currentIndex)
             currentIndex += 1
         Else
             tmrDia.Stop()
         End If
     End Sub
-    Private Sub PictureBox10_Click(sender As Object, e As EventArgs) Handles PictureBox10.Click
+    Private Sub PictureBox10_Click(sender As Object, e As EventArgs) Handles btnNext.Click
         tmrDia.Stop()
         opacityTimer.Stop()
 
         currentTextIndex += 1
-
-        If currentTextIndex >= texts.Count Then
-            currentTextIndex = 0
-        End If
-
         currentIndex = 0
         tmrDia.Start()
         If currentTextIndex >= texts.Count Then
-            currentIndex = 0
-            TabControl1.SelectedIndex = 8
+            TabControl1.SelectedTab = Story1
+            currentTextIndex = 0
         End If
         If currentTextIndex >= 9 Then
             opacityTimer.Start()
         End If
+    End Sub
+
+    Private Sub btnStoryNext1_Click(sender As Object, e As EventArgs) Handles btnStoryNext1.Click
+        TabControl1.SelectedTab = GameTab1
+    End Sub
+
+    Private Sub btnStoryNext2_Click(sender As Object, e As EventArgs) Handles btnStoryNext2.Click
+        TabControl1.SelectedTab = GameTab2
+    End Sub
+
+    Private Sub PictureBox12_Click(sender As Object, e As EventArgs) Handles btnStoryNext3.Click
+        TabControl1.SelectedTab = GameTab3
+    End Sub
+
+    Private Sub PictureBox13_Click(sender As Object, e As EventArgs) Handles btnStoryNext4.Click
+        TabControl1.SelectedTab = GameTab4
     End Sub
 End Class
