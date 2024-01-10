@@ -124,6 +124,9 @@
   <data name="Background__4_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="charBoyHurt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,6 +208,9 @@
   <data name="Copy_of_Copy_of_Girl1_Sprite__1___2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Copy of Copy of Girl1_Sprite (1) (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ddxkac6_ebe2ffce_8080_4ebf_b301_598019f384b0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ddxkac6-ebe2ffce-8080-4ebf-b301-598019f384b0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ezgif_com_rotate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ezgif.com-rotate.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -213,6 +219,9 @@
   </data>
   <data name="ezgif_com_rotate__2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ezgif.com-rotate (2).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pixel_art_water_grass_flowers_trees_hd_wallpaper_preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pixel-art-water-grass-flowers-trees-hd-wallpaper-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Screenshot_2023-12-8_16196326 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot_2023-12-8_16196326 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -240,5 +249,14 @@
   </data>
   <data name="Screenshot_2023_12_8_161966__1___5_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot_2023-12-8_161966 (1) (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sunset_rice_paddy_artwork_lens_flare_wallpaper_preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sunset-rice-paddy-artwork-lens-flare-wallpaper-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_360_F_563976540_1pe4FVuJuEEP3o1gbVfyrikw0mTMm6cj" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\360_F_563976540_1pe4FVuJuEEP3o1gbVfyrikw0mTMm6cj.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_60772b5722ed19cb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\60772b5722ed19cb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

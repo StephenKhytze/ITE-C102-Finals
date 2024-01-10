@@ -1,8 +1,22 @@
 ﻿
+Imports Windows.Win32
+Imports System.Net.Http
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Window
+
 Public Class Form1
     Dim playerHP As Integer = 3
     Dim enemyHP1, enemyHP2, enemyHP3, enemyHP4 As Integer
+    Dim charGender As String
+    Dim playerCharAttack, playerCharHurt, playerCharIdle, playerCharAttack2, playerCharHurt2, playerCharIdle2, playerCharStory As Image
     Dim battleTimer As Integer = 30
+    Dim texts As List(Of String) = New List(Of String)()
+    Dim currentTextIndex As Integer = 0
+    Dim currentIndex As Integer = 0
+    Dim opacityTimer As Timer = New Timer()
+    Dim currentOpacity As Single = 0.0
+
+    Dim image As Image = Image.FromFile("C:\Users\steph\Downloads\lights-d-iffuse.gif")
+
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         enemyHP1 = 5
@@ -16,6 +30,23 @@ Public Class Form1
         UpdateUI2()
         UpdateUI3()
         UpdateUI4()
+
+        texts.Add("The MC wakes up and decides to go down the mountain and take a stroll in the local village")
+        texts.Add("Once he arrives, he sees everything going up in flames...")
+        texts.Add("He sees the bodies as he walks and falls even more in despair as he sees childrens' bodies everywhere.")
+        texts.Add("He comes across an old man on the brink of death")
+        texts.Add("He immediately approaches the old man to try and help him but sees that it is hopeless.")
+        texts.Add("The old man suddenly grabs you and puts an orb of light inside your body and with his last breath he says to you...")
+        texts.Add("""Take it and run away and never look back!""")
+        texts.Add("The old man dies and you're forced to run away as demons scan the village for potential survivors")
+        texts.Add("You run back to your house in the mountains to collect your thoughts but you fall asleep.")
+        texts.Add("Knowledge flows in you throught your dreams on how to use the orb of light.")
+        UpdateLabelText()
+        opacityTimer.Interval = 50
+        AddHandler opacityTimer.Tick, AddressOf OpacityTimer_Tick
+
+
+        DrawImageWithOpacity(Image, PictureBox5, currentOpacity)
     End Sub
 
     Private Sub lblAnswer1_1_Click(sender As Object, e As EventArgs) Handles lblAnswer1_1.Click
@@ -23,10 +54,10 @@ Public Class Form1
         tmrBattle.Start()
 
         If enemyHP1 = 5 Then
-            imgCharSprite1.Image = My.Resources.charGIrlSpriteAttack
+            imgCharSprite1.Image = playerCharAttack
             enemyHP1 -= 1
         Else
-            imgCharSprite1.Image = My.Resources.charGirlHurtSprite
+            imgCharSprite1.Image = playerCharHurt
             playerHP -= 1
         End If
     End Sub
@@ -34,10 +65,10 @@ Public Class Form1
     Private Sub lblAnswer2_1_Click(sender As Object, e As EventArgs) Handles lblAnswer2_1.Click
         tmrAnimation.Start()
         If enemyHP1 = 4 Then
-            imgCharSprite1.Image = My.Resources.charGIrlSpriteAttack
+            imgCharSprite1.Image = playerCharAttack
             enemyHP1 -= 1
         Else
-            imgCharSprite1.Image = My.Resources.charGirlHurtSprite
+            imgCharSprite1.Image = playerCharHurt
             playerHP -= 1
         End If
     End Sub
@@ -45,10 +76,10 @@ Public Class Form1
     Private Sub lblAnswer3_1_Click(sender As Object, e As EventArgs) Handles lblAnswer3_1.Click
         tmrAnimation.Start()
         If enemyHP1 = 3 Or enemyHP1 = 1 Then
-            imgCharSprite1.Image = My.Resources.charGIrlSpriteAttack
+            imgCharSprite1.Image = playerCharAttack
             enemyHP1 -= 1
         Else
-            imgCharSprite1.Image = My.Resources.charGirlHurtSprite
+            imgCharSprite1.Image = playerCharHurt
             playerHP -= 1
         End If
     End Sub
@@ -56,10 +87,10 @@ Public Class Form1
     Private Sub lblAnswer4_1_Click(sender As Object, e As EventArgs) Handles lblAnswer4_1.Click
         tmrAnimation.Start()
         If enemyHP1 = 2 Then
-            imgCharSprite1.Image = My.Resources.charGIrlSpriteAttack
+            imgCharSprite1.Image = playerCharAttack
             enemyHP1 -= 1
         Else
-            imgCharSprite1.Image = My.Resources.charGirlHurtSprite
+            imgCharSprite1.Image = playerCharHurt
             playerHP -= 1
         End If
     End Sub
@@ -67,10 +98,10 @@ Public Class Form1
     Private Sub lblAnswer1_2_Click(sender As Object, e As EventArgs) Handles lblAnswer1_2.Click
         tmrAnimation.Start()
         If enemyHP2 = 4 Or enemyHP2 = 1 Then
-            imgCharSprite2.Image = My.Resources.charGirlSpriteAttack2
+            imgCharSprite2.Image = playerCharAttack2
             enemyHP2 -= 1
         Else
-            imgCharSprite2.Image = My.Resources.charGirlHurtSprite2
+            imgCharSprite2.Image = playerCharHurt2
             playerHP -= 1
         End If
     End Sub
@@ -78,10 +109,10 @@ Public Class Form1
     Private Sub lblAnswer2_2_Click(sender As Object, e As EventArgs) Handles lblAnswer2_2.Click
         tmrAnimation.Start()
         If enemyHP2 = 5 Then
-            imgCharSprite2.Image = My.Resources.charGirlSpriteAttack2
+            imgCharSprite2.Image = playerCharAttack2
             enemyHP2 -= 1
         Else
-            imgCharSprite2.Image = My.Resources.charGirlHurtSprite2
+            imgCharSprite2.Image = playerCharHurt2
             playerHP -= 1
         End If
     End Sub
@@ -89,10 +120,10 @@ Public Class Form1
     Private Sub lblAnswer3_2_Click(sender As Object, e As EventArgs) Handles lblAnswer3_2.Click
         tmrAnimation.Start()
         If enemyHP2 = 3 Then
-            imgCharSprite2.Image = My.Resources.charGirlSpriteAttack2
+            imgCharSprite2.Image = playerCharAttack2
             enemyHP2 -= 1
         Else
-            imgCharSprite2.Image = My.Resources.charGirlHurtSprite2
+            imgCharSprite2.Image = playerCharHurt2
             playerHP -= 1
         End If
     End Sub
@@ -100,10 +131,10 @@ Public Class Form1
     Private Sub lblAnswer4_2_Click(sender As Object, e As EventArgs) Handles lblAnswer4_2.Click
         tmrAnimation.Start()
         If enemyHP2 = 2 Then
-            imgCharSprite2.Image = My.Resources.charGirlSpriteAttack2
+            imgCharSprite2.Image = playerCharAttack2
             enemyHP2 -= 1
         Else
-            imgCharSprite2.Image = My.Resources.charGirlHurtSprite2
+            imgCharSprite2.Image = playerCharHurt
             playerHP -= 1
         End If
     End Sub
@@ -111,10 +142,10 @@ Public Class Form1
     Private Sub lblAnswer1_3_Click(sender As Object, e As EventArgs) Handles lblAnswer1_3.Click
         tmrAnimation.Start()
         If enemyHP3 = 4 Then
-            imgCharSprite3.Image = My.Resources.charGIrlSpriteAttack
+            imgCharSprite3.Image = playerCharAttack
             enemyHP3 -= 1
         Else
-            imgCharSprite3.Image = My.Resources.charGirlHurtSprite
+            imgCharSprite3.Image = playerCharHurt
             playerHP -= 1
         End If
     End Sub
@@ -122,10 +153,10 @@ Public Class Form1
     Private Sub lblAnswer2_3_Click(sender As Object, e As EventArgs) Handles lblAnswer2_3.Click
         tmrAnimation.Start()
         If enemyHP3 = 3 Then
-            imgCharSprite3.Image = My.Resources.charGIrlSpriteAttack
+            imgCharSprite3.Image = playerCharAttack
             enemyHP3 -= 1
         Else
-            imgCharSprite3.Image = My.Resources.charGirlHurtSprite
+            imgCharSprite3.Image = playerCharHurt
             playerHP -= 1
         End If
     End Sub
@@ -133,10 +164,10 @@ Public Class Form1
     Private Sub lblAnswer3_3_Click(sender As Object, e As EventArgs) Handles lblAnswer3_3.Click
         tmrAnimation.Start()
         If enemyHP3 = 5 Or enemyHP3 = 2 Then
-            imgCharSprite3.Image = My.Resources.charGIrlSpriteAttack
+            imgCharSprite3.Image = playerCharAttack
             enemyHP3 -= 1
         Else
-            imgCharSprite3.Image = My.Resources.charGirlHurtSprite
+            imgCharSprite3.Image = playerCharHurt
             playerHP -= 1
         End If
     End Sub
@@ -144,10 +175,10 @@ Public Class Form1
     Private Sub lblAnswer4_3_Click(sender As Object, e As EventArgs) Handles lblAnswer4_3.Click
         tmrAnimation.Start()
         If enemyHP3 = 1 Then
-            imgCharSprite3.Image = My.Resources.charGIrlSpriteAttack
+            imgCharSprite3.Image = playerCharAttack
             enemyHP3 -= 1
         Else
-            imgCharSprite3.Image = My.Resources.charGirlHurtSprite
+            imgCharSprite3.Image = playerCharHurt
             playerHP -= 1
         End If
     End Sub
@@ -155,10 +186,10 @@ Public Class Form1
     Private Sub lblAnswer1_4_Click(sender As Object, e As EventArgs) Handles lblAnswer1_4.Click
         tmrAnimation.Start()
         If enemyHP4 = 2 Then
-            imgCharSprite4.Image = My.Resources.charGIrlSpriteAttack
+            imgCharSprite4.Image = playerCharAttack
             enemyHP4 -= 1
         Else
-            imgCharSprite4.Image = My.Resources.charGirlHurtSprite
+            imgCharSprite4.Image = playerCharHurt
             playerHP -= 1
         End If
     End Sub
@@ -166,10 +197,10 @@ Public Class Form1
     Private Sub lblAnswer2_4_Click(sender As Object, e As EventArgs) Handles lblAnswer2_4.Click
         tmrAnimation.Start()
         If enemyHP4 = 1 Then
-            imgCharSprite4.Image = My.Resources.charGIrlSpriteAttack
+            imgCharSprite4.Image = playerCharAttack
             enemyHP4 -= 1
         Else
-            imgCharSprite4.Image = My.Resources.charGirlHurtSprite
+            imgCharSprite4.Image = playerCharHurt
             playerHP -= 1
         End If
     End Sub
@@ -177,10 +208,10 @@ Public Class Form1
     Private Sub lblAnswer3_4_Click(sender As Object, e As EventArgs) Handles lblAnswer3_4.Click
         tmrAnimation.Start()
         If enemyHP4 = 5 Or enemyHP4 = 3 Then
-            imgCharSprite4.Image = My.Resources.charGIrlSpriteAttack
+            imgCharSprite4.Image = playerCharAttack
             enemyHP4 -= 1
         Else
-            imgCharSprite4.Image = My.Resources.charGirlHurtSprite
+            imgCharSprite4.Image = playerCharHurt
             playerHP -= 1
         End If
     End Sub
@@ -188,10 +219,10 @@ Public Class Form1
     Private Sub lblAnswer4_4_Click(sender As Object, e As EventArgs) Handles lblAnswer4_4.Click
         tmrAnimation.Start()
         If enemyHP4 = 4 Then
-            imgCharSprite4.Image = My.Resources.charGIrlSpriteAttack
+            imgCharSprite4.Image = playerCharAttack
             enemyHP4 -= 1
         Else
-            imgCharSprite4.Image = My.Resources.charGirlHurtSprite
+            imgCharSprite4.Image = playerCharHurt
             playerHP -= 1
         End If
     End Sub
@@ -204,8 +235,11 @@ Public Class Form1
         If playerHP <= 0 Then
             TabControl1.SelectedTab = MenuTab
             ResetUI()
+            tmrBattle.Stop()
+
         ElseIf enemyHP1 And enemyHP2 AndAlso enemyHP3 AndAlso enemyHP4 <= 0 Then
             MessageBox.Show("Congratulations! You have defeated the demon lord!", "Victory!")
+            tmrBattle.Stop()
         End If
     End Sub
     Private Sub UpdateUI1()
@@ -370,22 +404,22 @@ Public Class Form1
         battleTimer = 30
     End Sub
     Private Sub UpdateAnimation1()
-        imgCharSprite1.Image = My.Resources.charGirlSpriteIdle
+        imgCharSprite1.Image = playerCharIdle
         UpdateUIHP()
         UpdateUI1()
     End Sub
     Private Sub UpdateAnimation2()
-        imgCharSprite2.Image = My.Resources.charGirlSpriteIdle2
+        imgCharSprite2.Image = playerCharIdle2
         UpdateUIHP()
         UpdateUI2()
     End Sub
     Private Sub UpdateAnimation3()
-        imgCharSprite3.Image = My.Resources.charGirlSpriteIdle
+        imgCharSprite3.Image = playerCharIdle
         UpdateUIHP()
         UpdateUI3()
     End Sub
     Private Sub UpdateAnimation4()
-        imgCharSprite4.Image = My.Resources.charGirlSpriteIdle
+        imgCharSprite4.Image = playerCharIdle
         UpdateUIHP()
         UpdateUI4()
     End Sub
@@ -395,6 +429,7 @@ Public Class Form1
         enemyHP3 = 5
         enemyHP4 = 5
         playerHP = 3
+        battleTimer = 30
     End Sub
 
     Private Sub tmrBattle_Tick(sender As Object, e As EventArgs) Handles tmrBattle.Tick
@@ -402,10 +437,10 @@ Public Class Form1
 
         If battleTimer <= 0 Then
             tmrAnimation.Stop()
-            imgCharSprite1.Image = My.Resources.charGirlHurtSprite
-            imgCharSprite2.Image = My.Resources.charGirlHurtSprite2
-            imgCharSprite3.Image = My.Resources.charGirlHurtSprite
-            imgCharSprite4.Image = My.Resources.charGirlHurtSprite '
+            imgCharSprite1.Image = playerCharHurt
+            imgCharSprite2.Image = playerCharHurt
+            imgCharSprite3.Image = playerCharHurt
+            imgCharSprite4.Image = playerCharHurt
             tmrAnimation.Start()
             battleTimer = 30
             playerHP -= 1
@@ -421,5 +456,109 @@ Public Class Form1
         lblTimer2.Text = Str(battleTimer)
         lblTimer3.Text = Str(battleTimer)
         lblTimer4.Text = Str(battleTimer)
+    End Sub
+
+    Private Sub PictureBox9_Click(sender As Object, e As EventArgs) Handles btnAdventureStart.Click
+        If radMale.Checked Then
+            playerCharIdle = My.Resources.charBoySpriteIdle
+            playerCharAttack = My.Resources.charBoySpriteAttack
+            playerCharHurt = My.Resources.charBoyHurtSprite
+            playerCharIdle2 = My.Resources.charBoySpriteIdle2
+            playerCharAttack2 = My.Resources.charBoySpriteAttack2
+            playerCharHurt2 = My.Resources.charBoyHurtSprite2
+            playerCharStory = My.Resources.charBoySpriteIdle2
+        ElseIf radFemale.Checked Then
+            playerCharIdle = My.Resources.charGirlSpriteIdle
+            playerCharAttack = My.Resources.charGIrlSpriteAttack
+            playerCharHurt = My.Resources.charGirlHurtSprite
+            playerCharIdle2 = My.Resources.charGirlSpriteIdle2
+            playerCharAttack2 = My.Resources.charGirlSpriteAttack2
+            playerCharHurt2 = My.Resources.charGirlHurtSprite2
+            playerCharStory = My.Resources.charGirlSpriteIdle2
+        Else
+            MessageBox.Show("Please select a character.", "Character Selection", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+        imgCharSprite1.Image = playerCharIdle
+        imgCharSprite2.Image = playerCharIdle2
+        imgCharSprite3.Image = playerCharIdle
+        imgCharSprite4.Image = playerCharIdle
+
+        tmrDia.Start()
+        TabControl1.SelectedTab = TabPage1
+    End Sub
+
+    Private Sub tmrDia_Tick(sender As Object, e As EventArgs)
+        If currentIndex <= texts(currentTextIndex).Length Then
+            Label6.Text = texts(currentTextIndex).Substring(0, currentIndex)
+            currentIndex += 1
+        Else
+            tmrDia.Stop()
+        End If
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles btnStart.Click
+        TabControl1.SelectedTab = TabPage11
+    End Sub
+    Private Sub OpacityTimer_Tick(sender As Object, e As EventArgs)
+        If currentOpacity < 1.0 Then
+            currentOpacity += 0.1
+            DrawImageWithOpacity(image, PictureBox9, currentOpacity)
+        Else
+            opacityTimer.Stop()
+        End If
+    End Sub
+    Private Sub UpdateLabelText()
+        If currentTextIndex < texts.Count Then
+            Label6.Text = texts(currentTextIndex)
+        End If
+    End Sub
+    Private Sub DrawImageWithOpacity(image As Image, pictureBox As PictureBox, opacity As Single)
+        Dim bmp As Bitmap = New Bitmap(image.Width, image.Height)
+        Dim g As Graphics = Graphics.FromImage(bmp)
+
+        Dim matrix As New Imaging.ColorMatrix(New Single()() _
+        {
+            New Single() {1, 0, 0, 0, 0},
+            New Single() {0, 1, 0, 0, 0},
+            New Single() {0, 0, 1, 0, 0},
+            New Single() {0, 0, 0, opacity, 0},
+            New Single() {0, 0, 0, 0, 1}
+        })
+
+        Dim attributes As New Imaging.ImageAttributes()
+        attributes.SetColorMatrix(matrix)
+
+        g.DrawImage(image, New Rectangle(0, 0, image.Width, image.Height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, attributes)
+
+        PictureBox9.Image = bmp
+    End Sub
+
+    Private Sub tmrDia_Tick_1(sender As Object, e As EventArgs) Handles tmrDia.Tick
+        If currentIndex <= texts(currentTextIndex).Length Then
+            Label6.Text = texts(currentTextIndex).Substring(0, currentIndex)
+            currentIndex += 1
+        Else
+            tmrDia.Stop()
+        End If
+    End Sub
+    Private Sub PictureBox10_Click(sender As Object, e As EventArgs) Handles PictureBox10.Click
+        tmrDia.Stop()
+        opacityTimer.Stop()
+
+        currentTextIndex += 1
+
+        If currentTextIndex >= texts.Count Then
+            currentTextIndex = 0
+        End If
+
+        currentIndex = 0
+        tmrDia.Start()
+        If currentTextIndex >= texts.Count Then
+            currentIndex = 0
+            TabControl1.SelectedIndex = 8
+        End If
+        If currentTextIndex >= 9 Then
+            opacityTimer.Start()
+        End If
     End Sub
 End Class
